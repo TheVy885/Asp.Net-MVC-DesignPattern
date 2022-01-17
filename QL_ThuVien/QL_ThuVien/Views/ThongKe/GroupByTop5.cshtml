@@ -1,0 +1,42 @@
+﻿@model IEnumerable<QL_ThuVien.Models.ViewModel>
+
+@{
+    ViewBag.Title = "GroupByTop5";
+    Layout = "~/Views/Shared/_LayoutListBook.cshtml";
+}
+<style>
+    table
+    {
+        width:1000px;
+    }
+</style>
+<h2>5 Cuốn Sách Được Mượn Nhiều Nhất</h2>
+
+<table class="table-bordered">
+    <tr>
+        <th>ID Sách </th>
+        <th>Tên Sách</th>
+        <th>Hình Ảnh</th>
+        <th>Thể Loại</th>
+        <th>Mô Tả</th>
+        <th>Tác Giả</th>
+        <th>Tổng Số Lượt Mượn</th>
+    </tr>
+
+    @foreach (var i in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(model => i.IDSach)</td>
+            <td>@Html.DisplayFor(model => i.TenSach)</td>
+            <td><img src="@Url.Content(i.HinhAnh)" height="150" width="150" /></td>
+            <td style="width:100px">@Html.DisplayFor(model => i.TheLoai)</td>
+            <td>@Html.DisplayFor(model => i.MoTa)</td>
+            <td>@Html.DisplayFor(model => i.TacGia)</td>
+            <td>@Html.DisplayFor(model => i.TongSoLuong)</td>
+            <td><a href="/GioSach/Addto/@i.IDSach" class="btn btn-default">Mượn Sách</a></td>
+
+        </tr>
+    }
+</table>
+
+

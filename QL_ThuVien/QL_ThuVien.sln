@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1062
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QL_ThuVien", "QL_ThuVien\QL_ThuVien.csproj", "{ECCEF9DE-5359-4C14-8C96-E709F403F143}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logger", "Logger\Logger.csproj", "{1FB41447-4B3C-4BFB-B044-CDF46E70B886}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ECCEF9DE-5359-4C14-8C96-E709F403F143}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECCEF9DE-5359-4C14-8C96-E709F403F143}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECCEF9DE-5359-4C14-8C96-E709F403F143}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECCEF9DE-5359-4C14-8C96-E709F403F143}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FB41447-4B3C-4BFB-B044-CDF46E70B886}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FB41447-4B3C-4BFB-B044-CDF46E70B886}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FB41447-4B3C-4BFB-B044-CDF46E70B886}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FB41447-4B3C-4BFB-B044-CDF46E70B886}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5E98FE6E-C7DE-4DAF-ABB1-0A4E3A20BDB4}
+	EndGlobalSection
+EndGlobal

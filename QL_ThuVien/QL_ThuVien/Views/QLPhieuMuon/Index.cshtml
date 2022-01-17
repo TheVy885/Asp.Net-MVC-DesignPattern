@@ -1,0 +1,86 @@
+﻿@model IEnumerable<QL_ThuVien.Models.PhieuMuon>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    th {
+        text-align: center;
+    }
+
+    td {
+        text-align: center;
+    }
+</style>
+<h2>Danh Sách Phiếu Mượn</h2>
+<br />
+@using (Html.BeginForm("Index", "QLPhieuMuon"))
+{
+    <input type="text" name="_name" />
+    <input type="submit" value="Tìm" />
+    <br />
+    <table class="table">
+        <tr>
+            <th>
+                ID Phiếu Mượn
+            </th>
+            <th>
+                ID Đọc Giả
+            </th>
+            <th>
+                Tên Đọc Giả
+            </th>
+            <th>
+                Ngày Mượn
+            </th>
+            <th>
+                Hạn Trả
+            </th>
+            <th>
+                Ghi chú
+            </th>
+            <th>
+                Tiền Phạt
+            </th>
+            <th>
+                Chức năng
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IDPM)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IDDG)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenDG)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NgayMuon)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NgayTra)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GhiChu)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TienPhat)
+                </td>
+                <td>
+                    @Html.ActionLink("Gia Hạn", "Edit", new { id = item.IDPM }) |
+                    @Html.ActionLink("Phạt", "Phat", new { id = item.IDPM }) |
+                    @Html.ActionLink("Xóa", "Delete", new { id = item.IDPM })
+                </td>
+            </tr>
+        }
+        
+
+    </table>      
+}

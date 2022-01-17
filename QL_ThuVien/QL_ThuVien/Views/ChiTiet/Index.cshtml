@@ -1,0 +1,97 @@
+﻿@model IEnumerable<QL_ThuVien.Models.CT_PM>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    th {
+        text-align: center;
+    }
+
+    td {
+        text-align: center;
+    }
+</style>
+<h2>Chi Tiết Phiếu Mượn</h2>
+
+<br />
+
+@using (Html.BeginForm("Index", "ChiTiet"))
+{
+    <input type="text" name="tendg" />
+    <input type="submit" value="Tìm" />
+
+    <table class="table">
+        <tr>
+            <th>
+                ID Phiếu Mượn
+            </th>
+            <th>
+                ID Đọc Giả
+            </th>
+            <th>
+                Tên Đọc Giả
+            </th>
+            <th>
+                ID Sách
+            </th>
+            <th>
+                Tên Sách
+            </th>
+            <th>
+                Số Lượng
+            </th>
+            <th>
+                Trạng Thái
+            </th>
+
+            <th>
+                Ngày Trả
+            </th>
+
+
+            <th>
+                Chức năng
+            </th>
+
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IDPM)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IDDG)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenDG)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IDSach)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenSach)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SoLuong)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TrangThai)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NgayTraThucTe)
+                </td>
+                <td>
+                    @Html.ActionLink("Trả Sách", "Edit", new { id = item.ID }) |
+
+                    @Html.ActionLink("Xóa", "Delete", new { id = item.ID })
+                </td>
+            </tr>
+        }
+
+    </table>
+}

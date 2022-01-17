@@ -1,0 +1,81 @@
+﻿
+@using QL_ThuVien.Models
+@model List<TheLoai>
+
+<style>
+
+    .left-content {      
+        width: 290px;      
+        margin-right: 50px;
+        margin-left:50px;
+    }
+
+        .left-content .category {
+            margin-top: 100px;
+            border-radius: 10px;
+            border: 3px #7c4729 solid;
+            box-sizing: border-box;
+        }
+
+            .left-content .category .category-left-title {
+                width: 100%;
+                height: 30px;
+                line-height: 30px;
+                text-align: center;
+                text-transform: uppercase;
+                color: #fff;
+                background-color: #7c4729;
+                border-radius: 7px;
+            }
+
+            .left-content .category ul {
+                padding: 15px;
+                margin-left: 30px;
+            }
+
+                .left-content .category ul li {
+                    padding: 7px 0;
+                }
+
+                    .left-content .category ul li a {
+                        text-decoration: none;
+                        color: #180242;
+                        font-weight: bold;
+                    }
+
+                        .left-content .category ul li a:hover {
+                            text-decoration: underline;
+                        }
+
+</style>
+
+
+
+    
+<div class="category">
+    <div class="category-left-title">
+        Mục Tìm Kiếm
+    </div>
+    
+         
+    <ul>
+        <li>
+            <a href="/ListBook/TimKiem" >Tìm Theo tên</a>
+        </li>
+        @{
+            foreach (var item in Model)
+            {
+                <li class="div-cate">
+                    @Html.ActionLink(item.NameCate,"Index","ListBook",
+                   new { category = item.IDCate.Trim() },"")
+
+                </li>
+
+            }
+        }
+    </ul>
+</div>
+    
+
+    
+

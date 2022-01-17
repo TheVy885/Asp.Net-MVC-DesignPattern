@@ -1,0 +1,81 @@
+﻿@model QL_ThuVien.Models.Sach
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Chi Tiết Thông Tin Sách</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            ID Sách
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDSach)
+        </dd>
+
+        <dt>
+            Tên Sách
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenSach)
+        </dd>
+
+        <dt>
+            Thể Loại
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TheLoai)
+        </dd>
+
+        <dt>
+            Mô Tả
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MoTa)
+        </dd>
+
+        <dt>
+           Tác Giả
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TacGia)
+        </dd>
+
+        <dt>
+            Ngày Xuất Bản
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayXuatBan)
+        </dd>
+        <dt>
+            Số Lượng
+        </dt>
+        <dd>
+            @Html.DisplayFor(model=>model.SoLuong)
+        </dd>
+
+        <dt>
+            Hình Ảnh
+        </dt>
+
+        <dd>
+            <img src="@Url.Content(Model.HinhAnh)" style="width:150px; height:150px" />
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new {  id = Model.IDSach }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

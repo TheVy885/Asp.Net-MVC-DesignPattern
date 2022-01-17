@@ -1,0 +1,132 @@
+﻿
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Book</title>
+    <script src="~/Scripts/AlertJS.js"></script>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        footer {
+            bottom: 0;
+            width: 100%;
+        }
+        .footer {
+            background-color: black;
+            color: white;
+            
+        }
+
+        
+    </style>
+    
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Quản Lý Thư Viện", "Index", "ListBook", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+
+                    <li>
+                        <a href="@Url.Action("Index","ListBook")">Danh sách các sách</a>
+                    </li>
+
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <img src="@Url.Content("~/Content/Image/gio.png")" style="height:40px;width:40px" />
+                        @Html.Action("BagBook", "GioSach");
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Index","Login")">LogOut</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    @if (TempData["AlertMessage"] != null)
+    {
+        <div id="AlertBox" class="alert @TempData["AlertType"] hide">
+            @TempData["AlertMessage"]
+            Demo Alert
+        </div> 
+    }
+
+    <div class="container-fluid body-content">
+        @RenderBody()
+    </div>
+
+
+    <hr />
+    <footer>
+        <div class="footer">
+            <div class="w3-row">
+                <div class=" w3-container w3-quarter">
+                    <h3>Giới Thiệu Thư Viện</h3>
+                    <ul>
+                        <li>
+
+                            <a href="" style="color:white;text-decoration:none">Giới Thiệu</a>
+                        </li>
+                        <li>
+                            <a href="" style="color:white;text-decoration:none">Nội Quy</a>
+                        </li>
+                        <li>
+                            <a href="" style="color:white;text-decoration:none">Hướng dẫn quy trình mượn sách</a>
+                        </li>
+                        <li> <a href="" style="color:white;text-decoration:none">Đăng ký tham gia làm thủ thư</a></li>
+                    </ul>
+                </div>
+                <div class="w3-container w3-quarter">
+                    <h3>Hỗ trợ chúng tôi</h3>
+                    <ul>
+                        <li><a href="">Giới thiệu</a></li>
+                        <li><a href="">Điều khoản và điều kiện</a></li>
+
+                    </ul>
+                </div>
+                <div class="w3-container w3-quarter">
+                    <h3>Liên hệ</h3>
+                    <ul>
+                        <li>Số 69 Lý Tự Trọng, Phường Bến Thành, Quận 1, Thành phố Hồ Chí Minh</li>
+                        <li>ĐT: + 84 (028) 3 8 225 055</li>
+                        <li>Email: thuvientphcm@thuvientphcm.gov.vn</li>
+
+                    </ul>
+                </div>
+                <div class="w3-container w3-quarter">
+                    <h3>Theo dõi chúng tôi</h3>
+                    <ul>
+
+                        <li><a href="">Facebook</a></li>
+                        <li><a href="">Youtube</a></li>
+                    </ul>
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

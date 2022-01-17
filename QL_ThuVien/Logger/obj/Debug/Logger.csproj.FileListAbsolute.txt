@@ -1,0 +1,6 @@
+C:\Users\ASUS\Desktop\New folder (3)\clone qlthuvien cho mtk\QL_ThuVien\Logger\bin\Debug\Logger.dll
+C:\Users\ASUS\Desktop\New folder (3)\clone qlthuvien cho mtk\QL_ThuVien\Logger\bin\Debug\Logger.pdb
+C:\Users\ASUS\Desktop\New folder (3)\clone qlthuvien cho mtk\QL_ThuVien\Logger\obj\Debug\Logger.csprojAssemblyReference.cache
+C:\Users\ASUS\Desktop\New folder (3)\clone qlthuvien cho mtk\QL_ThuVien\Logger\obj\Debug\Logger.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\Desktop\New folder (3)\clone qlthuvien cho mtk\QL_ThuVien\Logger\obj\Debug\Logger.dll
+C:\Users\ASUS\Desktop\New folder (3)\clone qlthuvien cho mtk\QL_ThuVien\Logger\obj\Debug\Logger.pdb

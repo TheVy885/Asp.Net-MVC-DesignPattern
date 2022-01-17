@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Book</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+
+        footer {
+            bottom: 0;
+            width: 100%;
+        }
+        .footer {
+            background-color: black;
+            color: white;
+            
+        }
+
+    
+
+        .left-content {
+            width: 200px;
+            float: left;
+            margin-right: 20px;
+        }
+
+        .right-content {
+            width: 690px;
+            float: left;
+        }
+        li.format-hello{
+            padding-top:15px;
+            color:white;
+        }
+        .clear-both{
+            clear:both;
+        }
+    </style>
+</head>
+<body>
+    <!--Header-->
+    @Html.Partial("Header");
+    <!--Body-->
+    <content>
+        <div class="row">
+            
+            @Html.Partial("Left_Content");
+
+            <div class="right-content">
+                @RenderBody()
+            </div>
+
+        </div>
+        <hr />
+    </content>
+
+    <!--Footer-->
+    @Html.Partial("Footer");
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

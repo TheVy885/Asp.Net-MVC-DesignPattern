@@ -1,0 +1,71 @@
+﻿@model IEnumerable<QL_ThuVien.Models.PhieuMuon>
+
+@{
+    ViewBag.Title = "TimKiemTheoID";
+    Layout = "~/Views/Shared/_LayoutListBook.cshtml";
+}
+
+@using (Html.BeginForm("TimKiemTheoID", "TraCuuPhieuMuon"))
+{
+    <input type="text" name="tendg" />
+    <input type="submit" value="Search" />
+
+    <table class="table">
+        <tr>
+            <th>
+                ID Phiếu Mượn
+            </th>
+            <th>
+                ID Đọc Giả
+            </th>
+            <th>
+                Tên Đọc Giả
+            </th>
+            <th>
+                Ngày Mượn
+            </th>
+            <th>
+                Ngày Trả
+            </th>
+            <th>
+                Tiền Phạt
+            </th>
+            <th>
+                Ghi Chú
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IDPM)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IDDG)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenDG)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NgayMuon)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NgayTra)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TienPhat)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.GhiChu)
+                </td>
+               
+            </tr>
+        }
+
+    </table>
+}
+
+

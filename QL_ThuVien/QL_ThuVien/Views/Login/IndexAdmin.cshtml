@@ -1,0 +1,62 @@
+﻿@model QL_ThuVien.Models.DangNhap
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>IndexAdmin</title>
+
+    <link href="~/Content/Login.css" rel="stylesheet" />
+
+    
+
+</head>
+<body>
+    <div id="form-login">
+        @using (Html.BeginForm("LoginAdmin", "Login", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            <div>
+                <Table>
+                    <tr class="title-form">
+                        <th colspan="2">LoginAdmin</th>
+                    </tr>
+
+                    <tr>
+                        <td>@Html.LabelFor(model => model.NameUser)</td>
+                        <td>@Html.TextBoxFor(model => model.NameUser, new { style = "field-validation-error" })</td>
+                        <td>@Html.ValidationMessageFor(model => model.NameUser)</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelFor(model => model.Password)</td>
+                        <td>@Html.PasswordFor(model => model.Password)</td>
+                        <td>@Html.ValidationMessageFor(model => model.Password)</td>
+                        @if (ViewBag.ErrorInfo == null)
+                        {
+                            <p>@ViewBag.ErrorInfo</p>
+                        }
+                    </tr>
+                    <tr>
+
+                        <th colspan="2">
+                            <input type="submit" class="btn" value="Login" />
+
+
+                        </th>
+                    </tr>
+                    <tr>
+                        <th colspan="2">
+                            <p style="text-align:left;float:left"><a href="@Url.Action("Register","Login")">Register</a></p>
+                            <p style="text-align:right"><a href="@Url.Action("Index","Login")">Back</a></p>
+                        </th>
+                    </tr>
+                </Table>
+            </div>
+        }
+    </div>
+</body>
+</html>
